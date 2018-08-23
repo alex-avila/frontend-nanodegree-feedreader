@@ -31,12 +31,23 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
+         it('ensures all objects in allFeeds has a URL', () => {
+            allFeeds.forEach(feed => {
+                expect(feed.url.length).toBeGreaterThan(0)
+            })
+         })
 
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
+         it('ensures all all feeds have a name', () => {
+            allFeeds.forEach(feed => {
+                expect(feed.name.length).toBeGreaterThan(0)
+            })
+         })
+
     });
 
 
