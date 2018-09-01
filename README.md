@@ -25,4 +25,4 @@ open index.html
 ## Dependencies & Resources
 
 * [Jasmine](https://github.com/jasmine/jasmine): Testing framwork
-* [IcoMoon-Free](https://github.com/Keyamoon/IcoMoon-Free): Icon resource
+* [IcoMoon-Free](https://github.com/Keyamoon/IcoMoon-Free): Icons resource
