@@ -31,7 +31,7 @@ $(function() {
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
-         it('ensures all objects in allFeeds has a URL', () => {
+         it('all have a URL', () => {
             allFeeds.forEach(feed => {
                 expect(feed.url.length).toBeGreaterThan(0);
             });
@@ -42,7 +42,7 @@ $(function() {
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
-         it('ensures all all feeds have a name', () => {
+         it('all have a name', () => {
             allFeeds.forEach(feed => {
                 expect(feed.name.length).toBeGreaterThan(0);
             });
@@ -57,7 +57,7 @@ $(function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-        it('ensures menu element is hidden by default', () => {
+        it('is hidden by default', () => {
             expect(document.body.classList[0]).toBe('menu-hidden');
         });
     
@@ -66,7 +66,7 @@ $(function() {
          * should have two expectations: does the menu display when
          * clicked and does it hide when clicked again.
          */
-        it('ensures menu changes visibility when the menu icon is clicked', () => {
+        it('changes visibility when the menu icon is clicked', () => {
             menuIcon = document.querySelector('.menu-icon-link');
             menuIcon.click();
             expect(document.body.classList[0]).toBeUndefined();
@@ -88,7 +88,7 @@ $(function() {
             loadFeed(0, done);
         });
 
-        it('ensures there is something in the .feed container when loadFeed is called', done => {
+        it('are present in .feed container when loadFeed is called', done => {
             expect(document.querySelector('.feed').childElementCount).toBeGreaterThan(0);
             done();
         });
@@ -109,7 +109,7 @@ $(function() {
             originalTitle = feed.querySelector('a article h2').textContent;
         });
 
-        it('ensures that content changes when loadFeed is called and loads a new feed', done => {
+        it('changes feed content when loadFeed is called', done => {
             const newTitle = feed.querySelector('a article h2').textContent;
             expect(newTitle).not.toBe(originalTitle);
             done();
