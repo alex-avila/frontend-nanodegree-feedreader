@@ -48,7 +48,7 @@ $(function() {
          * hidden by default.
          */
         it('is hidden by default', () => {
-            expect([...document.body.classList].includes('menu-hidden')).toBe(true);
+            expect(document.body.classList.contains('menu-hidden')).toBe(true);
         });
     
         /* Test to ensure that the menu changes
@@ -57,9 +57,9 @@ $(function() {
         it('changes visibility when the menu icon is clicked', () => {
             menuIcon = document.querySelector('.menu-icon-link');
             menuIcon.click();
-            expect(document.body.classList[0]).toBeUndefined();
+            expect(document.body.classList.contains('menu-hidden')).toBe(false);
             menuIcon.click();
-            expect(document.body.classList[0]).toBe('menu-hidden');
+            expect(document.body.classList.contains('menu-hidden')).toBe(true);
         });
     });
 
@@ -72,7 +72,7 @@ $(function() {
         beforeEach(done => loadFeed(0, done));
 
         it('are present in .feed container when loadFeed is called', () => {
-            expect(document.querySelector('.feed .entry')).not.toBeNull();
+            expect(document.querySelectorAll('.feed .entry').length).toBeGreaterThan(0);
         });
     });
 
